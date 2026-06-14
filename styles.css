@@ -1,0 +1,280 @@
+/* Rasesh Totlani — Personal Site
+   username.github.io */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:     #C9A84C;
+  --cream:    #F5F0E8;
+  --charcoal: #1A1A1A;
+  --grey:     #A8A39D;
+  --white:    #FFFFFF;
+  --display:  'Cormorant Garamond', Georgia, serif;
+  --body:     'Inter', Helvetica, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--body);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── NAV ── */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(245, 240, 232, 0.93);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.site-name {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--charcoal);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-family: var(--body);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover { color: var(--gold); }
+nav a:hover::after,
+nav a.active::after { width: 100%; }
+nav a.active { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-family: var(--body);
+  font-size: 0.9rem;
+  color: var(--grey);
+  letter-spacing: 0.06em;
+  max-width: 380px;
+  line-height: 1.8;
+}
+
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 2rem auto;
+}
+
+/* ── SECTIONS ── */
+.page-wrap {
+  padding-top: 80px;
+}
+
+section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.section-label {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+section h2 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+section p {
+  font-size: 1rem;
+  color: #3a3a3a;
+  margin-bottom: 1.25rem;
+  line-height: 1.85;
+  max-width: 620px;
+}
+
+/* ── INTERESTS GRID ── */
+.interests-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.interest-card {
+  background: var(--white);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.interest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.interest-card .icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.interest-card h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+
+.interest-card p {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin: 0;
+  max-width: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-family: var(--body);
+  font-size: 0.78rem;
+  color: var(--grey);
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  letter-spacing: 0.06em;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 576px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    padding: 1.25rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .interests-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  nav {
+    gap: 1.25rem;
+  }
+
+  nav a {
+    font-size: 0.68rem;
+  }
+
+  section {
+    padding: 3.5rem 1.5rem;
+  }
+}
